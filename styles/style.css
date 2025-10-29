@@ -1,0 +1,181 @@
+/*
+ * Style Sheet
+ *
+ * Copyright © Vladislav Kazantsev
+ * All rights reserved.
+ * This code is the intellectual property of Vladislav Kazantsev.
+ * You are welcome to clone the related repository and use the code for exploratory purposes.
+ * However, unauthorized reproduction, modification, or redistribution of this code (including cloning of related repository or altering it for activities beyond exploratory use) is strictly prohibited.
+ * Code snippets may be shared only when the original author is explicitly credited and a direct link to the original source of the code is provided alongside the code snippet.
+ * Sharing the link to the file is permitted, except when directed toward retrieval purposes.
+ * Any form of interaction with this file is strictly prohibited when facilitated by the code, except when such interaction is for discussion or exchange purposes with others.
+ * This copyright notice applies globally.
+ * For inquiries about collaboration, usage outside exploratory purposes, or permissions, please contact: hypervisor7@pm.me
+ */
+
+body {
+  background-color: #252e46;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  display: block;
+}
+
+h1 {
+  margin: 30px;
+  font-family: "Lobster", cursive;
+  text-shadow: 5px 0 #232932;
+  font-size: 7rem;
+  color: #4ecda3;
+}
+
+p {
+  font-size: 2rem;
+  color: #4ecda3;
+  font-family: "Indie Flower", cursive;
+}
+
+.dice {
+  display: inline-block;
+}
+
+img.rolling {
+  animation: roll 0.5s ease-in-out;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+img {
+  width: 80%;
+}
+
+button {
+  display: block;
+  margin: 1.5vh auto; /* Margin for spacing */
+  padding: 15px 30px; /* Increased padding for a larger button */
+  font-size: 1.5rem; /* Font size */
+  font-family: "Indie Flower", cursive; /* Custom font */
+  background-color: #4ecda3; /* Base color */
+  color: #252e46; /* Text color */
+  border: none; /* No border */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2156862745); /* Subtle shadow for depth */
+}
+
+button:hover {
+  background-color: #4ebf9d; /* Darker shade on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+button:active {
+  transform: translateY(1px); /* Pressed effect */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2156862745); /* Reduce shadow on press */
+}
+
+.sound-control {
+  position: fixed; /* Fixed position */
+  top: 20px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  cursor: pointer; /* Pointer cursor on hover */
+  color: #4ecca3; /* Icon color */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.sound-control:hover {
+  color: #3da68a; /* Change color on hover */
+}
+
+#footerContainer {
+  display: block;
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+}
+
+footer {
+  display: block;
+  bottom: 0;
+  color: #eeeeee; /* Set the text color to white */
+  left: 0;
+  margin: 0; /* Remove any default margin */
+  padding: 1vh 0; /* Set the thickness of the padding area */
+  position: fixed; /* Position the element fixed to the viewport */
+  text-align: center; /* Set the alignment of the text */
+  width: 100%; /* Set the width of the element to 100% of its parent container */
+  font-size: 1.7rem;
+  font-family: "Arvo", cursive;
+}
+
+footer a {
+  color: #eeeeee; /* Set the text color to white */
+  text-decoration: underline;
+}
+
+footer a:visited {
+  color: #eeeeee; /* Set the text color to white */
+}
+
+@media (min-width: 1400px) {
+  h1 {
+    margin: 50px 0 10vh;
+    padding: 0;
+  }
+}
+@media (min-width: 430px) and (max-width: 1400px) {
+  h1 {
+    font-size: 5.7rem;
+    margin: 0;
+    padding: 0;
+  }
+  .dice {
+    width: 27vh;
+    margin: 0 5vh;
+  }
+  p {
+    margin: 5vh auto;
+  }
+  img {
+    width: 27vh;
+  }
+}
+@media (max-width: 430px) {
+  .dice {
+    width: 45vw;
+  }
+  img {
+    width: 45vw;
+  }
+}
+@media print {
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid; /* Не разрываем страницу после заголовка */
+  }
+  section,
+  div,
+  p {
+    page-break-inside: avoid; /* Не разрываем абзац на две страницы */
+  }
+  footer {
+    bottom: auto;
+  }
+}
