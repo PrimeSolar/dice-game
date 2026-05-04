@@ -1,5 +1,12 @@
 /**
- * Script
+ * Dice Roll Interaction Script for Audio, Animation, Outcome, and UI Statements Management
+ *
+ * Event management for audio playback, random outcome generation, animated images, UI statement updates, and celebratory particle effects. The script performs the following tasks asynchronously while limiting user interaction during the animation period:
+ * - Play an audio signal.
+ * - Generate two independent uniform random integers in the closed interval [1,6], representing fair six-sided dice.
+ * - Trigger CSS-driven rolling animations for both image elements.
+ * - After a fixed animation latency, update the image sources to reflect rolled face values, terminate the rolling animation classes, evaluate the contest outcome, update the result label, and spawn confetti bursts to visually indicate winner(s).
+ * - Temporarily disable the initiating control and update its label to prevent repeated activations; re-enable and restore the label after the same animation latency to maintain synchronous timing.
  *
  * Copyright © Vladislav Kazantsev
  * All rights reserved.
@@ -15,6 +22,10 @@
 
 /** Roll Dice button event listener. */
 document.getElementById("rollButton").addEventListener("click", function () {
+  /**
+   * The script includes detailed comments
+   * to support stakeholders with varying JS knowledge.
+   */
   /** Play sound effect if sound is on. */
   if (isSoundOn) {
     new Audio("assets/audio/dice-roll.mp3").play();
@@ -45,28 +56,28 @@ document.getElementById("rollButton").addEventListener("click", function () {
     if (randomNumber1 > randomNumber2) {
       h1.textContent = "🏆 Player 1 Wins!";
       confetti({
-        particleCount: 100, /** Number of confetti pieces. */
-        spread: 70, /** Spread of the confetti. */
-        origin: { x: 0.32, y: 0.7 }, /** Origin point for the confetti. */
+        particleCount: 100 /** Number of confetti pieces. */,
+        spread: 70 /** Spread of the confetti. */,
+        origin: { x: 0.32, y: 0.7 } /** Origin point for the confetti. */,
       });
     } else if (randomNumber2 > randomNumber1) {
       h1.textContent = "Player 2 Wins! 🏆";
       confetti({
-        particleCount: 100, /** Number of confetti pieces. */
-        spread: 70, /** Spread of the confetti. */
-        origin: { x: 0.68, y: 0.7 }, /** Origin point for the confetti. */
+        particleCount: 100 /** Number of confetti pieces. */,
+        spread: 70 /** Spread of the confetti. */,
+        origin: { x: 0.68, y: 0.7 } /** Origin point for the confetti. */,
       });
     } else {
       h1.textContent = "Draw!";
       confetti({
-        particleCount: 100, /** Number of confetti pieces. */
-        spread: 70, /** Spread of the confetti. */
-        origin: { x: 0.32, y: 0.7 }, /** Origin point for the confetti. */
+        particleCount: 100 /** Number of confetti pieces. */,
+        spread: 70 /** Spread of the confetti. */,
+        origin: { x: 0.32, y: 0.7 } /** Origin point for the confetti. */,
       });
       confetti({
-        particleCount: 100, /** Number of confetti pieces. */
-        spread: 70, /** Spread of the confetti. */
-        origin: { x: 0.68, y: 0.7 }, /** Origin point for the confetti. */
+        particleCount: 100 /** Number of confetti pieces. */,
+        spread: 70 /** Spread of the confetti. */,
+        origin: { x: 0.68, y: 0.7 } /** Origin point for the confetti. */,
       });
     }
   }, 500); /** Delay for 0.5 second for the animation. */
