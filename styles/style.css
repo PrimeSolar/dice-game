@@ -1,5 +1,8 @@
 /*
- * Style Sheet
+ * The Dice Game Style Sheet
+ * 
+ * This style sheet provides a detailed, responsive design with cross-browser support for the 
+ * Dice Game application.
  *
  * Copyright © Vladislav Kazantsev
  * All rights reserved.
@@ -13,28 +16,31 @@
  * For inquiries about collaboration, usage outside exploratory purposes, or permissions, please contact: hypervisor7@pm.me
  */
 
+@charset "UTF-8";
 body {
-  background-color: #252e46;
-  margin: 0;
+  background-color: #252e46; /* Set the color for the background of the element. */
+  margin: 0; /* Set the thickness for the margin area of the element. */
 }
 
+/* The style sheet includes detailed property comments
+to support stakeholders with varying CSS knowledge. */
 .container {
   text-align: center;
   display: block;
 }
 
 h1 {
-  margin: 30px;
-  font-family: "Lobster", cursive;
+  margin: 30px; /* Set the thickness for the margin area of the element. */
+  font-family: "Lobster", cursive; /* Set the font family for the text of the element. */
   text-shadow: 5px 0 #232932;
-  font-size: 7rem;
-  color: #4ecda3;
+  font-size: 7rem; /* Set the font size for the text of the element. */
+  color: #4ecda3; /* Set the color for the text of the element. */
 }
 
 p {
-  font-size: 2rem;
-  color: #4ecda3;
-  font-family: "Indie Flower", cursive;
+  font-size: 2rem; /* Set the font size for the text of the element. */
+  color: #4ecda3; /* Set the color for the text of the element. */
+  font-family: "Indie Flower", cursive; /* Set the font family for the text of the element. */
 }
 
 .dice {
@@ -47,115 +53,172 @@ img.rolling {
 
 @keyframes roll {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(
+      0deg
+    ); /* For older versions of Chrome and Safari. */
+    -ms-transform: rotate(0deg); /* For Internet Explorer 10. */
+    transform: rotate(
+      0deg
+    ); /* Standard syntax for modern browsers (widely supported). */
   }
   25% {
-    transform: rotate(90deg);
+    -webkit-transform: rotate(
+      90deg
+    ); /* For older versions of Chrome and Safari. */
+    -ms-transform: rotate(90deg); /* For Internet Explorer 10. */
+    transform: rotate(
+      90deg
+    ); /* Standard syntax for modern browsers (widely supported). */
   }
   50% {
-    transform: rotate(180deg);
+    -webkit-transform: rotate(
+      180deg
+    ); /* For older versions of Chrome and Safari. */
+    -ms-transform: rotate(180deg); /* For Internet Explorer 10. */
+    transform: rotate(
+      180deg
+    ); /* Standard syntax for modern browsers (widely supported). */
   }
   75% {
-    transform: rotate(270deg);
+    -webkit-transform: rotate(
+      270deg
+    ); /* For older versions of Chrome and Safari. */
+    -ms-transform: rotate(270deg); /* For Internet Explorer 10. */
+    transform: rotate(
+      270deg
+    ); /* Standard syntax for modern browsers (widely supported). */
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(
+      360deg
+    ); /* For older versions of Chrome and Safari. */
+    -ms-transform: rotate(360deg); /* For Internet Explorer 10. */
+    transform: rotate(
+      360deg
+    ); /* Standard syntax for modern browsers (widely supported). */
   }
 }
+
 img {
   width: 80%;
 }
 
 button {
   display: block;
-  margin: 1.5vh auto; /* Margin for spacing */
-  padding: 15px 30px; /* Increased padding for a larger button */
-  font-size: 1.5rem; /* Font size */
-  font-family: "Indie Flower", cursive; /* Custom font */
-  background-color: #4ecda3; /* Base color */
-  color: #252e46; /* Text color */
-  border: none; /* No border */
-  border-radius: 25px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2156862745); /* Subtle shadow for depth */
+  margin: 1.5vh auto; /* Set the thickness for the margin area of the element. */
+  padding: 15px 30px; /* Set the padding of the element. */
+  font-size: 1.5rem; /* Set the font size for the text of the element. */
+  font-family: "Indie Flower", cursive; /* Set the font family for the text of the element. */
+  background-color: #4ecda3; /* Set the color for the background of the element. */
+  color: #252e46; /* Set the color for the text of the element. */
+  border: none;
+  cursor: pointer; /* Specify the type of cursor to be displayed when hovering over the element, indicating interactivity. */
+  -webkit-box-shadow: 0 4px 15px #00000037;
+  box-shadow: 0 4px 15px #00000037;
+  /* Set an effect of a transition for the element. */
+  -webkit-transition: background-color 0.3s, transform 0.2s; /* For older versions of Chrome and Safari. */
+  -o-transition: background-color 0.3s, transform 0.2s; /* For older versions of Opera. */
+  transition: background-color 0.3s, transform 0.2s; /* Standard syntax for modern browsers (widely supported). */
+  /* Set the border radius for the corners of the element. */
+  -webkit-border-radius: 25px; /* For older versions of Chrome and Safari. */
+  -moz-border-radius: 25px; /* For older versions of Firefox. */
+  -o-border-radius: 25px; /* For older versions of Opera. */
+  border-radius: 25px; /* Standard property for border radius. */
 }
 
 button:hover {
-  background-color: #4ebf9d; /* Darker shade on hover */
-  transform: translateY(-3px); /* Lift effect on hover */
+  background-color: #4ebf9d; /* Set the color for the background of the element. */
+  -webkit-transform: translateY(
+    -3px
+  ); /* For older versions of Chrome and Safari. */
+  -ms-transform: translateY(-3px); /* For Internet Explorer 10. */
+  transform: translateY(
+    -3px
+  ); /* Standard syntax for modern browsers (widely supported). */
 }
 
 button:active {
-  transform: translateY(1px); /* Pressed effect */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2156862745); /* Reduce shadow on press */
+  -webkit-box-shadow: 0 2px 10px #00000037;
+  box-shadow: 0 2px 10px #00000037;
+  -webkit-transform: translateY(
+    1px
+  ); /* For older versions of Chrome and Safari. */
+  -ms-transform: translateY(1px); /* For Internet Explorer 10. */
+  transform: translateY(
+    1px
+  ); /* Standard syntax for modern browsers (widely supported). */
 }
 
 .sound-control {
-  position: fixed; /* Fixed position */
-  top: 20px; /* Distance from the top */
-  right: 20px; /* Distance from the right */
-  cursor: pointer; /* Pointer cursor on hover */
-  color: #4ecca3; /* Icon color */
-  transition: color 0.3s; /* Smooth color transition */
+  position: fixed; /* Set the position for the element. */
+  top: 20px; /* Position the element relative to the top edge of its nearest positioned ancestor. */
+  right: 20px; /* Position the element relative to the right edge of its nearest positioned ancestor. */
+  cursor: pointer; /* Specify the type of cursor to be displayed when hovering over the element, indicating interactivity. */
+  color: #4ecca3; /* Set the color for the text of the element. */
+  /* Set an effect of a transition for the element. */
+  -webkit-transition: color 0.3s; /* For older versions of Chrome and Safari. */
+  -o-transition: color 0.3s; /* For older versions of Opera. */
+  transition: color 0.3s; /* Standard syntax for modern browsers (widely supported). */
 }
 
 .sound-control:hover {
-  color: #3da68a; /* Change color on hover */
+  color: #3da68a; /* Set the color for the text of the element. */
 }
 
-#footerContainer {
+#FooterContainer {
   display: block;
-  margin: 0; /* Remove any default margin */
-  padding: 0; /* Remove any default padding */
+  margin: 0; /* Set the thickness for the margin area of the element. */
+  padding: 0; /* Set the padding of the element. */
 }
 
 footer {
   display: block;
   bottom: 0;
-  color: #eeeeee; /* Set the text color to white */
+  color: #eeeeee; /* Set the color for the text of the element. */
   left: 0;
-  margin: 0; /* Remove any default margin */
-  padding: 1vh 0; /* Set the thickness of the padding area */
-  position: fixed; /* Position the element fixed to the viewport */
+  margin: 0; /* Set the thickness for the margin area of the element. */
+  padding: 1vh 0; /* Set the padding of the element. */
+  position: fixed; /* Set the position for the element. */
   text-align: center; /* Set the alignment of the text */
   width: 100%; /* Set the width of the element to 100% of its parent container */
-  font-size: 1.7rem;
-  font-family: "Arvo", cursive;
+  font-size: 1.7rem; /* Set the font size for the text of the element. */
+  font-family: "Arvo", cursive; /* Set the font family for the text of the element. */
 }
 
 footer a {
-  color: #eeeeee; /* Set the text color to white */
+  color: #eeeeee; /* Set the color for the text of the element. */
   text-decoration: underline;
 }
 
 footer a:visited {
-  color: #eeeeee; /* Set the text color to white */
+  color: #eeeeee; /* Set the color for the text of the element. */
 }
 
 @media (min-width: 1400px) {
   h1 {
-    margin: 50px 0 10vh;
-    padding: 0;
+    margin: 50px 0 10vh; /* Set the thickness for the margin area of the element. */
+    padding: 0; /* Set the padding of the element. */
   }
 }
+
 @media (min-width: 430px) and (max-width: 1400px) {
   h1 {
-    font-size: 5.7rem;
-    margin: 0;
-    padding: 0;
+    font-size: 5.7rem; /* Set the font size for the text of the element. */
+    margin: 0; /* Set the thickness for the margin area of the element. */
+    padding: 0; /* Set the padding of the element. */
   }
   .dice {
     width: 27vh;
-    margin: 0 5vh;
+    margin: 0 5vh; /* Set the thickness for the margin area of the element. */
   }
   p {
-    margin: 5vh auto;
+    margin: 5vh auto; /* Set the thickness for the margin area of the element. */
   }
   img {
     width: 27vh;
   }
 }
+
 @media (max-width: 430px) {
   .dice {
     width: 45vw;
@@ -164,18 +227,19 @@ footer a:visited {
     width: 45vw;
   }
 }
+
 @media print {
   h1,
   h2,
   h3 {
-    page-break-after: avoid; /* Не разрываем страницу после заголовка */
+    page-break-after: avoid;
   }
   section,
   div,
   p {
-    page-break-inside: avoid; /* Не разрываем абзац на две страницы */
+    page-break-inside: avoid;
   }
   footer {
     bottom: auto;
   }
-}
+} /*# sourceMappingURL=style.css.map */
