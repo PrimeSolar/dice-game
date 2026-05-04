@@ -17,12 +17,16 @@
  */
 
 /** Footer. */
-footerContainer = document.querySelector("#footerContainer");
+const FooterContainer = document.querySelector("#FooterContainer");
+/**
+ * The script includes detailed comments
+ * to support stakeholders with varying JS knowledge.
+ */
 const year = new Date().getFullYear();
-function footerContainerF(footerContainer) {
-  if (footerContainer != null) {
+function footerContainerF(FooterContainer) {
+  if (FooterContainer !== null) {
     /** Define footer content. */
-    footerContainer.innerHTML += `<footer>Copyright © <a href="https://primesolar.github.io/web-developer/">Vladislav Kazantsev</a> ${year}</footer>`;
+    FooterContainer.innerHTML += `<footer>Copyright © <a href="https://primesolar.github.io/web-developer/">Vladislav Kazantsev</a> ${year}</footer>`;
     footer = document.querySelector("footer");
     const donationButton = document.createElement("button");
     donationButton.innerText = "Support Me";
@@ -45,6 +49,6 @@ function footerContainerF(footerContainer) {
     footer.appendChild(donationButton);
   }
 }
-footerContainerF(footerContainer);
+footerContainerF(FooterContainer);
 
 console.log("components.js is completed");
